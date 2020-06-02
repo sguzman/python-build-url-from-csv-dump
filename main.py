@@ -16,7 +16,7 @@ def build_url(idd: str, md5: str, author: str, title: str, publisher: str, year:
     idd_i: int = int(idd)
     idd_str: str = (idd_i // 1000) * 1000
 
-    return f'http://93.174.95.29/main/{idd_str}/{md5}/{title} '
+    return f'http://93.174.95.29/main/{idd_str}/{md5}/{title} - {title}  {publisher} ({year}).{extension}'
 
 
 def main() -> None:
