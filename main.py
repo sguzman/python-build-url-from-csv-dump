@@ -1,6 +1,8 @@
 import csv
 import sys
 import typing
+import urllib
+from urllib import parse as ul
 from typing import List
 
 def assert_cmd(args: List[str]) -> None:
@@ -15,8 +17,10 @@ def get_csv(args: List[str]) -> str:
 def build_url(idd: str, md5: str, author: str, title: str, publisher: str, year: str, extension: str) -> str:
     idd_i: int = int(idd)
     idd_str: str = (idd_i // 1000) * 1000
+    formatted_str: str = f'http://93.174.95.29/main/{idd_str}/{md5}/{title} - {title}  {publisher} ({year}).{extension}'
+    url_str: str = ul.quote(formatted_str)
 
-    return f'http://93.174.95.29/main/{idd_str}/{md5}/{title} - {title}  {publisher} ({year}).{extension}'
+    return url_str
 
 
 def main() -> None:
