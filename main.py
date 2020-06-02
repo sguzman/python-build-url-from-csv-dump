@@ -28,7 +28,6 @@ def main() -> None:
         next(csv_read)
 
         for row in csv_read:
-            print(row)
             print(build_url(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
 
 if __name__ == '__main__':
