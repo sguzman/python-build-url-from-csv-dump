@@ -13,7 +13,6 @@ def get_csv(args: List[str]) -> str:
     return args[1]
 
 def build_url(idd: str, md5: str, author: str, title: str, publisher: str, year: str, extension: str) -> str:
-    print(idd)
     idd_i: int = int(idd)
     idd_str: str = (idd_i // 1000) * 1000
 
@@ -25,7 +24,6 @@ def main() -> None:
     csv_file: str = sys.argv[1]
 
     with open(csv_file) as csv_fd:
-        print('Opened file', csv_file, 'succesfully')
         csv_read = csv.reader(csv_fd, delimiter=',', quotechar='"')
         next(csv_read)
 
